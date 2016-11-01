@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>OrcaTrak - Registration</title>
+    </h:head>
+    <h:body>
+        <h5><b>In flow? #{null != facesContext.application.flowHandler.currentFlow ? "Yes" : "No"}</b></h5>
+        <h5>Flow Id is #{null != facesContext.application.flowHandler.currentFlow.id ? 
+                         facesContext.application.flowHandler.currentFlow.id : "null"}</h5> 
+        <hr/>
+        <h5>You are registered as a #{facesContext.application.flowHandler.currentFlow.id}</h5>
+        <h1>Create account</h1>
+        <h:form>
+            <h:panelGrid columns="4" cellpadding="4px">
+                First name
+                <h:inputText value="#{user.firstName}"></h:inputText>
+                Last name
+                <h:inputText value="#{user.lastName}"></h:inputText>
+                Email
+                <h:inputText value="#{user.email}"></h:inputText>
+                Password
+                <h:inputSecret value="#{user.password}"></h:inputSecret>
+                <h:commandButton value="Back" action="back-to-booking"/>
+                <h:commandButton value="Create your Orca Express account" action="success-Id"/>
+                <h:commandButton value="Get quote" action="quote-Id"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

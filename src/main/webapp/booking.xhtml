@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>OrcaTrak - Booking</title>
+    </h:head>
+    <h:body>
+        <h5><b>In flow? #{null != facesContext.application.flowHandler.currentFlow ? "Yes" : "No"}</b></h5> 
+        <h5>Flow Id is #{facesContext.application.flowHandler.currentFlow.id ? 
+                         facesContext.application.flowHandler.currentFlow.id  : "null"}</h5>
+        <h3>Enter the desired flow:</h3>
+        <h:form>
+            <h:commandLink value="Guest | " action="guest"/>
+
+            <!-- TODO: try using actionListener but will need programmatic code-->           
+            <h:commandLink value="Member" action="member"/>  
+        </h:form>
+
+
+        <!-- 
+        
+        
+        1-
+        <h:form>
+           can you please tell me why this is not working i could be wrong but i remember somewhere in your book 
+            that if i use a commandLink we should use actionListener "Links implement actionSource2 interface that register 
+            an actionEvent that is queued System Events  provide a precise way to observe the state of the jsf life cycle
+           and are used by jsf to enable new features such as ajax - ed burns"
+            <h:commandLink value="start booking" actionListener="guest/guest.xhtml"/> 
+        </h:form>
+        
+        
+        2-
+        you need to take a look at the value of the attribute action of the <code><h:commandButton></code> tag.  
+        This value is the name (ID) of our flow; after the window context is enabled, JSF will search the indicated 
+        flow and navigate to the start node of the flow.  By default, the window context is disabled.
+        
+        
+        -->
+
+    </h:body>
+</html>
+

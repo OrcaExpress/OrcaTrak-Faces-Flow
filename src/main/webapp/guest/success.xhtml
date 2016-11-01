@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>OrcaTrak - Success</title>
+    </h:head>
+    <h:body>
+        <h5><b>In flow? #{null != facesContext.application.flowHandler.currentFlow ? "Yes" : "No"}</b></h5>
+        <h5>Flow Id is #{null != facesContext.application.flowHandler.currentFlow.id ? 
+                         facesContext.application.flowHandler.currentFlow.id : "null"}</h5> 
+        <hr/>
+        <h5>You are registered as a #{facesContext.application.flowHandler.currentFlow.id}</h5>
+        <h1>registration was successful!</h1>
+        <h:button value="back" outcome="back-to-booking"/>
+    </h:body>
+</html>
+
